@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CHEF-IT! CS5744-P1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">Chef-It!</a>
+    <a href="background.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Background & Use Cases</a>
+    <a href="requirements.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Requirements</a>
+    <a href="backend_architecture.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Backend Architecture</a>
+    <a href="design_rationale.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Design Rationale</a>
+    <a href="conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Conclusion</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home (Full Text)</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="background.html">Background</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="requirements.html">Requirements</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="design_rationale.html">Design Rationale</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="conclusion.html">Conclusion</a>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <!-- background.html -->
+      <h2 class="w3-text-teal">Heading2</h2>
+      <!-- <img src="images/diff_mediums.png" style="display: block;
+      text-align: center;
+      margin: auto;" width="auto" height="auto"></img> -->
+
+      <!-- requirements.html -->
+      <h1 class="w3-text-teal">Heading1</h1>
+      <div class="w3-container">
+        <!-- <hr>
+        <div class="w3-center">
+          <h2>Tables</h2>
+          <p w3-class="w3-large">Don't worry. W3.CSS takes care of your tables.</p>
+        </div> -->
+        <!-- TABLES EXAMPLE UNDERNEATH-->
+      <!-- <div class="w3-responsive w3-card-4">
+
+      <table class="w3-table w3-striped w3-bordered">
+      <thead>
+      <tr class="w3-theme">
+        <th>Identifier</th>
+        <th>Requirement/Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>FR-1</td>
+        <td>Application must allow users to generate unique user profiles</td>
+      </tr>
+      <tr class="w3-white">
+        <td>FR-2</td>
+        <td>Application must retain recipes within the datastores</td>
+      </tr>
+      <tr>
+        <td>FR-3</td>
+        <td>Application must call recipes and present to the user when requested</td>
+      </tr>
+      <tr class="w3-white">
+        <td>FR-4</td>
+        <td>Application must allow filtering of recipes based upon pre-defined criteria</td>
+      </tr>
+      <tr>
+        <td>FR-5</td>
+        <td>Application must store and build internal associations for video recipes</td>
+      </tr>
+      <tr class="w3-white">
+        <td>FR-6</td>
+        <td>Application must allow for and retain user feedback on recipes</td>
+      </tr>
+      <tr>
+        <td>FR-7</td>
+        <td>Application must allow for each recipe to be user rated and retain that rating</td>
+      </tr>
+      <tr class="w3-white">
+        <td>FR-8</td>
+        <td>Application must be available for iOS (API 13+) and Android (API 23+)</td>
+      </tr>
+      <tr>
+        <td>FR-9</td>
+        <td>Application must implement a service that allows for in-app payment</td>
+      </tr>
+      <tr class="w3-white">
+        <td>FR-10</td>
+        <td>Application must implement location services microservice for grocer locating</td>
+      </tr>
+      <tr>
+        <td>FR-11</td>
+        <td>Application must implement a shopping cart microservice that links to local grocers</td>
+      </tr>
+      <tr class="w3-white">
+        <td>FR-12</td>
+        <td>Application must allow users to search recipes for keywords</td>
+      </tr>
+      <tr>
+        <td>FR-13</td>
+        <td>Application must be accessible by commonly used internet browsers</td>
+      </tr>
+      </tbody>
+      </table>
+      </div> -->
+      <!-- <div class="w3-center"><p><b>Table B-1.</b> Functional requirements for the Chef It! application.
+    </p></div> -->
+      <!-- conclusion.html-->
+      <h2 class="w3-text-teal">Conclusion</h2>
+      </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l1">
+      <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
