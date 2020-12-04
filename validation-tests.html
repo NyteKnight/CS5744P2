@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CHEF-IT! CS5744-P1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+ol {
+  counter-reset: item
+}
+ol li {
+  display: block
+}
+ol li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">CS5744-P2</a>
+    <a href="test-scope.html" class="w3-bar-item w3-button w3-theme-l1">Test Scope</a>
+    <a href="test-plan.html" class="w3-bar-item w3-button w3-theme-l1">Test Plan</a>
+    <a href="test-procedure.html" class="w3-bar-item w3-button w3-theme-l1">Test Procedure</a>
+    <a href="validation-tests.html" class="w3-bar-item w3-button w3-theme-l1">Validation Tests</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home (Full Text)</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-scope.html">Test Scope</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-plan.html">Test Plan</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-procedure.html">Test Procedure</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="validation-tests.html">Validation Tests</a>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    
+    <div class="w3-twothird w3-container">
+  <!-- Part 4 Validation-->
+  <h2 class="w3-text-teal">Part 4: Test Plan - Validation Testing</h2>
+  <p>As part of the validation process, we will conduct tests to ensure proper functionality and expected behavior of the web application. The tests will be separated into 6 categories, each testing a separate functionality.</p>
+  <h3 class="w3-text-teal">Usability Testing</h3>
+  <p>Usability testing is a technique used in user-centered interaction design to evaluate a product by testing it on users. This can be seen as an irreplaceable usability practice, since it gives direct input on how real users use the system. This will ensure that the mobile app and website are easy to use and provide a satisfactory user experience to the customers. It will also provide information towards if users are able to complete discrete tasks successfully and identify how long it takes to complete each task.</p>
+  <h3 class="w3-text-teal">Compatibility Testing</h3>
+  <p>Compatibility testing is a part of non-functional testing conducted on application software to ensure the application's compatibility with different computing environments.This will check whether the system is capable of running on different hardware, operating systems, applications, network environments or mobile devices according to the requirements.</p>  
+  <h3 class="w3-text-teal">Interface Testing</h3>
+  <p>An interface is a connection that integrates two components within a system. An interface can range from a Graphical User Interface (GUI) to APIs and server based communication between the database server to application server or client to web server. Interface Testing is defined as a software testing type which verifies whether the communication between two different software systems is done correctly.</p>  
+  <h3 class="w3-text-teal">Services Testing</h3>
+  <p>Web Services Testing is a type of software testing that validates the mechanism of communication through which two applications / devices exchange data. The purpose of Web Services Testing is to check the functionality, reliability, performance, and security of an API(Application Program Interface). Testing the services of the application will occur both online and offline and should be irrespective of underlying architecture.</p> 
+  <h3 class="w3-text-teal">Performance Testing</h3>
+  <p>Performance testing is a testing practice performed to determine how a system performs in terms of responsiveness and stability under a particular workload. In the context of a web application, we will be testing and analyzing the metrics below:</p>
+  <ul>
+    <li>User Satisfaction (Apdex) </li>
+    <li>Average response time</li>
+    <li>Error rates</li>
+    <li>Request rate</li>
+    <li>Application and server utilization</li>
+    <li>Application availability</li>
+    <li>Query response time</li>
+  </ul>
+  <h3 class="w3-text-teal">Security Testing</h3>
+  <p>Due to the sensitive data such as personal information and credit card transactions, a thorough security test will be conducted, Security testing is the process intended to reveal flaws in the security mechanisms of an information system that protect data and maintain functionality as intended. The purpose of adding security testing into the validation process uncovers vulnerabilities of the system and determines that the data and resources of the system are protected from possible intruders. It ensures that the software system and application are free from any threats or risks that can cause a loss.</p> 
+  <table class="w3-table w3-striped w3-bordered">
+    <thead>
+    <tr class="w3-theme">
+      <th>Test Category</th>
+      <th>Functional Requirement</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Usability</td>
+      <td>FR-1,FR-2,FR-3,FR-4,FR-5,FR-6,FR-7,FR-8,FR-9,FR-10</td>
+    </tr>
+    <tr class="w3-white">
+      <td>Compatibility</td>
+      <td>NFR-1,NFR-4,NFR-5</td>
+    </tr>
+    <tr>
+      <td>Interface</td>
+      <td>FR-,FR-3,FR-4,FR-7,FR-8,FR-10,FR-11,FR-12,FR-14</td>
+    </tr>
+    <tr class="w3-white">
+      <td>Services</td>
+      <td>FR-1,FR-2,FR-4,FR-5,FR-12,NFR-3,NFR-2</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>FR-13,NFR-1,NFR-2,NFR-5,NFR-4,NFR-7</td>
+    </tr>
+    <tr class="w3-white">
+      <td>Security</td>
+      <td>FR-1,FR-2,FR-12,NFR-4,NFR-6</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l1">
+      <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

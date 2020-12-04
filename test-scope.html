@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CHEF-IT! CS5744-P1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+ol {
+  counter-reset: item
+}
+ol li {
+  display: block
+}
+ol li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">CS5744-P2</a>
+    <a href="test-scope.html" class="w3-bar-item w3-button w3-theme-l1">Test Scope</a>
+    <a href="test-plan.html" class="w3-bar-item w3-button w3-theme-l1">Test Plan</a>
+    <a href="test-procedure.html" class="w3-bar-item w3-button w3-theme-l1">Test Procedure</a>
+    <a href="validation-tests.html" class="w3-bar-item w3-button w3-theme-l1">Validation Tests</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home (Full Text)</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-scope.html">Test Scope</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-plan.html">Test Plan</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-procedure.html">Test Procedure</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="validation-tests.html">Validation Tests</a>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Test Plan for Get-A-room Online Hotel Booking System</h1>
+      <!-- background.html -->
+      <!-- <img src="images/diff_mediums.png" style="display: block;
+      text-align: center;
+      margin: auto;" width="auto" height="auto"></img> -->
+
+      <!-- requirements.html -->
+      
+      <div class="w3-container">
+      <p>In this document, we will outline our high level test plan for the get-a-room Online Hotel Booking System. This system is designed to allow users to locate available hotel rooms in a desired area and manage the entirety of the booking process. Our test plan will seek to ensure the functionality of this system from an integration and validation perspective.
+      </p>
+      <h1 class="w3-text-teal">Part 1: Test Scope</h1>
+      <p>To properly test this plan, we will need to approach the system from the requirements described by the team for their final product. The requirements are shown below in Table 1 below, which was provided by the get-a-room team.</p>
+      <h3 class= "w3-text-teal">Functional Requirement</h3>
+      <table class="w3-table w3-striped w3-bordered">
+        <thead>
+        <tr class="w3-theme">
+          <th>####</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>FR-1</td>
+          <td>Users have the ability to create an online account. Email address, password, and name are required to create an account.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-2</td>
+          <td>Authentication requires email address and password.</td>
+        </tr>
+        <tr>
+          <td>FR-3</td>
+          <td>Users are able to complete booking requests as a guest or with a saved account.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-4</td>
+          <td>Ability to view and manage previous and future bookings and itineraries will be available to users with a saved account.</td>
+        </tr>
+        <tr>
+          <td>FR-5</td>
+          <td>Bookings can be canceled by accessing a saved account or searching by confirmation number.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-6</td>
+          <td>Check-in/checkout-out dates, number of guests, number of rooms, and type of room can be edited after a booking is completed, if available at the selected hotel.</td>
+        </tr>
+        <tr>
+          <td>FR-7</td>
+          <td>Users may be required to provide a form of payment at the time of booking; UI must be able to accept payment information. User receives an error message if payment fails.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-8</td>
+          <td>Confirmation page with a confirmation number will be displayed once booking is completed.</td>
+        </tr>
+        <tr>
+          <td>FR-9</td>
+          <td>Confirmation email will be sent to the user email address with confirmation number once booking is completed.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-10</td>
+          <td>The following search criteria are required to search for available hotel rooms: Address (full address, city, or zip code), check-in and check-out dates, number of rooms, number of adults and children.</td>
+        </tr>
+        <tr>
+          <td>FR-11</td>
+          <td>The following search criteria are optional: Distance from location entered, price range, star rating of hotel, guest rating of hotel.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-12</td>
+          <td>If a saved account is being used, search results will be ranked based on machine learning algorithms.</td>
+        </tr>
+        <tr>
+          <td>FR-13</td>
+          <td>Machine learning engine utilizes the following inputs based on the user’s previous hotel choices: distance from location entered, price range, star rating of hotel, guest rating of hotel. Engine will generate ranked results based on the user’s preferences.</td>
+        </tr>
+        <tr>
+          <td>FR-14</td>
+          <td>Search results can be manually filtered or sorted by the user based on: distance from location entered, price high-to-low, price low-to-high, star rating of hotel, guest rating of hotel.</td>
+        </tr>
+        </tbody>
+        </table>
+      <h3 class= "w3-text-teal">Non-Functional Requirements</h3>
+        <table class="w3-table w3-striped w3-bordered">
+          <thead>
+          <tr class="w3-theme">
+            <th>####</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>NFR-1</td>
+            <td>Get-a-room will support a website and mobile apps for Android and iOS devices.</td>
+          </tr>
+          <tr class="w3-white">
+            <td>NFR-2</td>
+            <td>Search engine and booking processing service must interface with multiple hotel APIs to retrieve search results.</td>
+          </tr>
+          <tr>
+            <td>NFR-3</td>
+            <td>Payment processing service must interface with multiple financial institution APIs to process payments.</td>
+          </tr>
+          <tr class="w3-white">
+            <td>NFR-4</td>
+            <td>Cloud database solutions will be utilized.</td>
+          </tr>
+          <tr>
+            <td>NFR-5</td>
+            <td>Databases must have capability to scale up or down if/when necessary.</td>
+          </tr>
+          <tr class="w3-white">
+            <td>NFR-6</td>
+            <td>User personal data and payment information must be secured.</td>
+          </tr>
+          <tr>
+            <td>NFR-5</td>
+            <td>Website and mobile application must be available 99.99% of the time.</td>
+          </tr>
+          </tbody>
+          </table>
+        </div>
+        <div class="w3-center"><p><b>Table 1.</b> System requirements described by the get-a-room team.</p></div>
+      <p>
+        The objective of our testing will be to evaluate the design’s functional, performance, and internal design characteristics. The requirement identifiers labeled in Table 1 will help to describe the testing plan as it encompasses each characteristic of the system. This process is further described in the section that follows. 
+      </p>
+  <h2 class="w3-text-teal">Functional Characteristics</h2>
+  <h3 class="w3-text-teal">Requirements tested: FR-1 - FR-14</h3>
+  <p>Our test plan will need to evaluate whether or not the system is able to complete all tasks laid out in Table 1. Functionally, it will also need to be assessed to ensure all modules are able to integrate with one another. It will also need to be tested for correctness through validation testing. Due to the relative simplicity of the application, our test process will cover all of the Functional Requirements stated by the development team. The intricate details of the machine learning algorithm that produces suggestions based upon user interaction will be outside of the test scope. However, our test plan will cover the validity of the products of this algorithm.</p>
+  <h2 class="w3-text-teal">Internal Design Characteristics</h2>
+  <h3 class="w3-text-teal">Requirements tested: NFR-1 - NFR-4</h3>
+  <p>Non-Functional requirements 1-4 cover the internal design of the application. We intend to test these by giving a pass or fail rating based on the ability of the design to accomplish these tasks. NFR-1 and NFR-4 will be satisfied if the design does fulfill these requirements. We will consider NFR-2 and NFR-3 complete if the application can interface with 3 hotel and banking institutions respectively</p>
+  <h2 class="w3-text-teal">Performance Characteristics</h2>
+  <h3 class="w3-text-teal">Requirements tested: NFR-5 - NFR-7</h3>
+  <p>The performance requirements specified by the developers cover the scalability, integrity, and availability of the application. Our test scope will cover the investigation of how these requirements are satisfied. Since a database storage solution is used on the server side, NFR-5 will be satisfied simply based on the solution chosen. NFR-6 will be assessed as a part of validation testing, and NFR-7 will be tested by simulating a heavy transaction load and monitoring the system’s response.</p>
+</div>
+
+  </div>
+
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l1">
+      <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CHEF-IT! CS5744-P1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+ol {
+  counter-reset: item
+}
+ol li {
+  display: block
+}
+ol li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">CS5744-P2</a>
+    <a href="test-scope.html" class="w3-bar-item w3-button w3-theme-l1">Test Scope</a>
+    <a href="test-plan.html" class="w3-bar-item w3-button w3-theme-l1">Test Plan</a>
+    <a href="test-procedure.html" class="w3-bar-item w3-button w3-theme-l1">Test Procedure</a>
+    <a href="validation-tests.html" class="w3-bar-item w3-button w3-theme-l1">Validation Tests</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home (Full Text)</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-scope.html">Test Scope</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-plan.html">Test Plan</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-procedure.html">Test Procedure</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="validation-tests.html">Validation Tests</a>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    
+    <div class="w3-twothird w3-container">
+
+  <!-- Part 2 Test Plan-->
+  <h2 class="w3-text-teal">Part 2: Test Plan - Integration Testing</h2>
+  <p>To integrate the three modules (client side, server side, and orchestrator), the best way is through three phases of continuous integration. Continuous integration allows for developers to integrate code into the repository frequently. Each integration is also automatically built and automatically tested.</p>
+  <p>Each phase consists of coding, automated testing, reporting, and source control. Each of these phases will be tested in isolation. This is to test the basic functionality of each module, detect early and easy to track bugs, and eliminate the possibility of errors being caused by another module’s code. After code is committed into the repository, it will be automatically tested. Reports will determine if integrated code has passed the units tests. If not, integrated code will be source controlled and will restart the at the beginning of the phase of coding. If tests are passed, that phase will be completed and the module will be deployed.</p>
+  <h3 class="w3-text-teal">Phase 1: Client Side Testing</h3>
+  <p>Phase one contains the client side portion of the system. This includes the user interface, system management, and core functionality of the web application. The user interface is the only way the end users will interact with the get a room web application. Testing must be done so that all features on the front end are correctly displaying and properly functioning. The system management needs to be tested on how well the user interface can handle authentication of users and guests. This portion of the testing will be cursory in this section as we are simply trying to verify that the system works as a whole, but more thoroughly examined during validation testing. Core functionality such as itinerary management and confirmation allows for a meaningful user experience.We believe that testing the client side system in Phase one will allow us to gain insight into features users like and don’t like earlier in the build process which will prevent us from having us to double back and retest portions of the code late in the integration assessment process.</p>
+  <h3 class="w3-text-teal">Phase 2: Server Side Testing</h3>
+  <p>Phase two focuses on the server side portion of the application, the database. Since the database will hold a large collection of data, testing must be thorough and intensive to assure the correctness of information. We will also handle testing the scalability of the database in this portion. As the creators do not wish to have any physical servers and instead rely on the Cloud for server side processing, we do not need to perform any testing on the server side system beyond this verification.</p>
+  <h3 class="w3-text-teal">Phase 3: Orchestrator Testing</h3>
+  <p>The final phase is bringing in the system that connects the client and server, the orchestrator. Correct configuration will be necessary to ensure the interoperability of the modules. To ensure this, payment and reservation processing will be part of the final phase. Payment processing will be tested by making HTTP requests to financial company APIs and handling the HTTP responses. Testing is to make sure the web application is able to generate revenue and profit. This also applies to hotel HTTP web service requests so the orchestrator has the most up to date hotel information.</p>
+  
+  
+  </div>
+  </div>
+
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l1">
+      <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
