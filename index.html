@@ -16,6 +16,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   bottom: 0;
   height: inherit;
 }
+ol {
+  counter-reset: item
+}
+li {
+  display: block
+}
+li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item
+}
 </style>
 <body>
 
@@ -23,12 +33,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">Chef-It!</a>
-    <a href="background.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Background & Use Cases</a>
-    <a href="requirements.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Requirements</a>
-    <a href="backend_architecture.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Backend Architecture</a>
-    <a href="design_rationale.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Design Rationale</a>
-    <a href="conclusion.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Conclusion</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">CS5744-P2</a>
+    <a href="test-scope.html" class="w3-bar-item w3-button w3-theme-l1">Test Scope</a>
+    <a href="test-plan.html" class="w3-bar-item w3-button w3-theme-l1">Test Plan</a>
+    <a href="test-procedure.html" class="w3-bar-item w3-button w3-theme-l1">Test Procedure</a>
+    <a href="validation-tests.html" class="w3-bar-item w3-button w3-theme-l1">Validation Tests</a>
   </div>
 </div>
 
@@ -39,10 +48,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   </a>
   <h4 class="w3-bar-item"><b>Menu</b></h4>
   <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home (Full Text)</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="background.html">Background</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="requirements.html">Requirements</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="design_rationale.html">Design Rationale</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="conclusion.html">Conclusion</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-scope.html">Test Scope</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-plan.html">Test Plan</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="test-procedure.html">Test Procedure</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="validation-tests.html">Validation Tests</a>
 </nav>
 
 
@@ -53,16 +62,291 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
+    
     <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Test Plan for Get-A-room Online Hotel Booking System</h1>
       <!-- background.html -->
-      <h2 class="w3-text-teal">Heading2</h2>
       <!-- <img src="images/diff_mediums.png" style="display: block;
       text-align: center;
       margin: auto;" width="auto" height="auto"></img> -->
 
       <!-- requirements.html -->
-      <h1 class="w3-text-teal">Heading1</h1>
+      
       <div class="w3-container">
+      <p>In this document, we will outline our high level test plan for the get-a-room Online Hotel Booking System. This system is designed to allow users to locate available hotel rooms in a desired area and manage the entirety of the booking process. Our test plan will seek to ensure the functionality of this system from an integration and validation perspective.
+      </p>
+      <h1 class="w3-text-teal">Part 1: Test Scope</h1>
+      <p>To properly test this plan, we will need to approach the system from the requirements described by the team for their final product. The requirements are shown below in Table 1 below, which was provided by the get-a-room team.</p>
+      <h3 class= "w3-text-teal">Functional Requirement</h3>
+      <table class="w3-table w3-striped w3-bordered">
+        <thead>
+        <tr class="w3-theme">
+          <th>####</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>FR-1</td>
+          <td>Users have the ability to create an online account. Email address, password, and name are required to create an account.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-2</td>
+          <td>Authentication requires email address and password.</td>
+        </tr>
+        <tr>
+          <td>FR-3</td>
+          <td>Users are able to complete booking requests as a guest or with a saved account.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-4</td>
+          <td>Ability to view and manage previous and future bookings and itineraries will be available to users with a saved account.</td>
+        </tr>
+        <tr>
+          <td>FR-5</td>
+          <td>Bookings can be canceled by accessing a saved account or searching by confirmation number.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-6</td>
+          <td>Check-in/checkout-out dates, number of guests, number of rooms, and type of room can be edited after a booking is completed, if available at the selected hotel.</td>
+        </tr>
+        <tr>
+          <td>FR-7</td>
+          <td>Users may be required to provide a form of payment at the time of booking; UI must be able to accept payment information. User receives an error message if payment fails.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-8</td>
+          <td>Confirmation page with a confirmation number will be displayed once booking is completed.</td>
+        </tr>
+        <tr>
+          <td>FR-9</td>
+          <td>Confirmation email will be sent to the user email address with confirmation number once booking is completed.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-10</td>
+          <td>The following search criteria are required to search for available hotel rooms: Address (full address, city, or zip code), check-in and check-out dates, number of rooms, number of adults and children.</td>
+        </tr>
+        <tr>
+          <td>FR-11</td>
+          <td>The following search criteria are optional: Distance from location entered, price range, star rating of hotel, guest rating of hotel.</td>
+        </tr>
+        <tr class="w3-white">
+          <td>FR-12</td>
+          <td>If a saved account is being used, search results will be ranked based on machine learning algorithms.</td>
+        </tr>
+        <tr>
+          <td>FR-13</td>
+          <td>Machine learning engine utilizes the following inputs based on the user’s previous hotel choices: distance from location entered, price range, star rating of hotel, guest rating of hotel. Engine will generate ranked results based on the user’s preferences.</td>
+        </tr>
+        <tr>
+          <td>FR-14</td>
+          <td>Search results can be manually filtered or sorted by the user based on: distance from location entered, price high-to-low, price low-to-high, star rating of hotel, guest rating of hotel.</td>
+        </tr>
+        </tbody>
+        </table>
+      <h3 class= "w3-text-teal">Non-Functional Requirements</h3>
+        <table class="w3-table w3-striped w3-bordered">
+          <thead>
+          <tr class="w3-theme">
+            <th>####</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>NFR-1</td>
+            <td>Get-a-room will support a website and mobile apps for Android and iOS devices.</td>
+          </tr>
+          <tr class="w3-white">
+            <td>NFR-2</td>
+            <td>Search engine and booking processing service must interface with multiple hotel APIs to retrieve search results.</td>
+          </tr>
+          <tr>
+            <td>NFR-3</td>
+            <td>Payment processing service must interface with multiple financial institution APIs to process payments.</td>
+          </tr>
+          <tr class="w3-white">
+            <td>NFR-4</td>
+            <td>Cloud database solutions will be utilized.</td>
+          </tr>
+          <tr>
+            <td>NFR-5</td>
+            <td>Databases must have capability to scale up or down if/when necessary.</td>
+          </tr>
+          <tr class="w3-white">
+            <td>NFR-6</td>
+            <td>User personal data and payment information must be secured.</td>
+          </tr>
+          <tr>
+            <td>NFR-5</td>
+            <td>Website and mobile application must be available 99.99% of the time.</td>
+          </tr>
+          </tbody>
+          </table>
+        </div>
+        <div class="w3-center"><p><b>Table 1.</b> System requirements described by the get-a-room team.</p></div>
+      <p>
+        The objective of our testing will be to evaluate the design’s functional, performance, and internal design characteristics. The requirement identifiers labeled in Table 1 will help to describe the testing plan as it encompasses each characteristic of the system. This process is further described in the section that follows. 
+      </p>
+  <h2 class="w3-text-teal">Functional Characteristics</h2>
+  <h3 class="w3-text-teal">Requirements tested: FR-1 - FR-14</h3>
+  <p>Our test plan will need to evaluate whether or not the system is able to complete all tasks laid out in Table 1. Functionally, it will also need to be assessed to ensure all modules are able to integrate with one another. It will also need to be tested for correctness through validation testing. Due to the relative simplicity of the application, our test process will cover all of the Functional Requirements stated by the development team. The intricate details of the machine learning algorithm that produces suggestions based upon user interaction will be outside of the test scope. However, our test plan will cover the validity of the products of this algorithm.</p>
+  <h2 class="w3-text-teal">Internal Design Characteristics</h2>
+  <h3 class="w3-text-teal">Requirements tested: NFR-1 - NFR-4</h3>
+  <p>Non-Functional requirements 1-4 cover the internal design of the application. We intend to test these by giving a pass or fail rating based on the ability of the design to accomplish these tasks. NFR-1 and NFR-4 will be satisfied if the design does fulfill these requirements. We will consider NFR-2 and NFR-3 complete if the application can interface with 3 hotel and banking institutions respectively</p>
+  <h2 class="w3-text-teal">Performance Characteristics</h2>
+  <h3 class="w3-text-teal">Requirements tested: NFR-5 - NFR-7</h3>
+  <p>The performance requirements specified by the developers cover the scalability, integrity, and availability of the application. Our test scope will cover the investigation of how these requirements are satisfied. Since a database storage solution is used on the server side, NFR-5 will be satisfied simply based on the solution chosen. NFR-6 will be assessed as a part of validation testing, and NFR-7 will be tested by simulating a heavy transaction load and monitoring the system’s response.</p>
+
+
+  <!-- Part 3 Test Plan-->
+  <h2 class="w3-text-teal">Part 2: Test Plan - Integration Testing</h2>
+  <p>To integrate the three modules (client side, server side, and orchestrator), the best way is through three phases of continuous integration. Continuous integration allows for developers to integrate code into the repository frequently. Each integration is also automatically built and automatically tested.</p>
+  <p>Each phase consists of coding, automated testing, reporting, and source control. Each of these phases will be tested in isolation. This is to test the basic functionality of each module, detect early and easy to track bugs, and eliminate the possibility of errors being caused by another module’s code. After code is committed into the repository, it will be automatically tested. Reports will determine if integrated code has passed the units tests. If not, integrated code will be source controlled and will restart the at the beginning of the phase of coding. If tests are passed, that phase will be completed and the module will be deployed.</p>
+  <h3 class="w3-text-teal">Phase 1: Client Side Testing</h3>
+  <p>Phase one contains the client side portion of the system. This includes the user interface, system management, and core functionality of the web application. The user interface is the only way the end users will interact with the get a room web application. Testing must be done so that all features on the front end are correctly displaying and properly functioning. The system management needs to be tested on how well the user interface can handle authentication of users and guests. This portion of the testing will be cursory in this section as we are simply trying to verify that the system works as a whole, but more thoroughly examined during validation testing. Core functionality such as itinerary management and confirmation allows for a meaningful user experience.We believe that testing the client side system in Phase one will allow us to gain insight into features users like and don’t like earlier in the build process which will prevent us from having us to double back and retest portions of the code late in the integration assessment process.</p>
+  <h3 class="w3-text-teal">Phase 2: Server Side Testing</h3>
+  <p>Phase two focuses on the server side portion of the application, the database. Since the database will hold a large collection of data, testing must be thorough and intensive to assure the correctness of information. We will also handle testing the scalability of the database in this portion. As the creators do not wish to have any physical servers and instead rely on the Cloud for server side processing, we do not need to perform any testing on the server side system beyond this verification.</p>
+  <h3 class="w3-text-teal">Phase 3: Orchestrator Testing</h3>
+  <p>The final phase is bringing in the system that connects the client and server, the orchestrator. Correct configuration will be necessary to ensure the interoperability of the modules. To ensure this, payment and reservation processing will be part of the final phase. Payment processing will be tested by making HTTP requests to financial company APIs and handling the HTTP responses. Testing is to make sure the web application is able to generate revenue and profit. This also applies to hotel HTTP web service requests so the orchestrator has the most up to date hotel information.</p>
+  <h2 class="w3-text-teal">Part 3: Test Procedure for Build</h2>
+  <ol>
+    <li>Client Side System</li>
+    <ol>
+      <li>User Interface</li>
+      <ol>
+        <li>Test Objective: FR-1 Create online account</li>
+        <ol>
+          <li>Technique</li>
+          <ol>
+            <li>Access get a room web application on internet browser</li>
+            <li>Create account on web application</li>
+          </ol>
+          <li>Completion Criteria: Account creation validation</li>
+        </ol>
+        <li>Test Objective: FR-3 Complete book requests as guest or member</li>
+        <ol>
+          <li>Technique</li>
+          <ol>
+            <li>Attempt to book requests as a guest</li>
+            <li>Validate correct requests are displayed</li>
+            <li>Attempt to book requests as a member</li>
+            <li>Validate correct requests as displayed</li>
+          </ol>
+          <li>Completion Criteria: Client displays the correct data</li>
+        </ol>
+      </ol>
+      <li>System Management</li>
+        <ol>
+          <li>Test Objective: FR-2 Authentication requires email address and password</li>
+          <ol>
+            <li>Technique</li>
+            <ol>
+              <li>Log into get a room web application using email address and password</li>
+              <li>Validate authentication</li>
+            </ol>
+            <li>Completion Criteria: Invoke authentication using valid/invalid data</li>
+          </ol>
+        </ol>
+      <li>Core Function</li>
+        <ol>
+          <li>Test Objective: FR-3, FR-4, FR-5, FR-6 Manage bookings and itineraries for user accounts</li>
+            <ol>
+              <li>Technique</li>
+              <ol>
+                <li>Book future itineraries</li>
+                <li>Assign past itineraries to user test account</li>
+                <li>Cancel or edit future itineraries </li>
+                <li>Validate itinerary manager displays bookings</li>
+              </ol>
+              <li>Completion Criteria: Validate web application functions as designed</li>
+            </ol>
+            <li>Test Objective: FR-8, FR-9 Test web application confirmation response functionality</li>
+            <ol>
+              <li>Technique</li>
+              <ol>
+                <li>Book itinerary</li>
+                <li>Pay with valid payment type</li>
+                <li>CValidate confirmation responses from web application</li>
+              </ol>
+              <li>Completion Criteria: Validate client side confirmation response</li>
+            </ol>
+            <li>Test Objective: FR-10 to FR-14 Test search functionality</li>
+            <ol>
+              <li>Technique</li>
+              <ol>
+                <li>Enter valid/invalid data into search function</li>
+                <li>Validate search results</li>
+              </ol>
+              <li>Completion Criteria: Validate client side search results</li>
+            </ol>
+            <li>Test Objective: NFR-1 Verify functionality of website, Android, iOS apps</li>
+            <ol>
+              <li>Technique</li>
+              <ol>
+                <li>Replicate all client side functional requirements across all deployment platforms</li>
+              </ol>
+              <li>Completion Criteria: Verify ability of clients to fulfill requirements</li>
+            </ol>
+        </ol>
+    </ol>
+    <li>Server Side System</li>
+    <ol>
+      <li>Database</li>
+      <ol>
+        <li>Test Objective: Validate correctness of database queries</li>
+        <ol>
+          <li>Perform a set of database queries (CREATE, READ, UPDATE, and DELETE)</li>
+          <li>Validate returned results are correct</li>
+        </ol>
+        <li>Completion Criteria: Validate the correctness of the collection of data and the structure of the database schema</li>
+        <li>Test Objective: NFR-5 Test the scalability of the database</li>
+        <ol>
+          <li>Technique</li>
+          <ol>
+            <li>Programatically add a large amount of user information to the database</li>
+            <li>Programmatically add a large amount of reservation data to the database</li>
+            <li>Remove all but a very small amount of data from the database</li>
+            <li></li>
+          </ol>
+          <li>Completion Criteria: Validate database scalability</li>
+        </ol>
+      </ol>
+    </ol>
+    <li>Orchestrator</li>
+    <ol>
+      <li>Payment Processing</li>
+      <ol>
+        <li>Test Objective: FR-7, NFR-3 Invoke server side application payment transactions</li>
+        <ol>
+          <li>Technique</li>
+            <ol>
+              <li>Pay with valid/invalid payment types</li>
+              <li>Validate pay transaction response</li>
+              <li>Simulate a large amount of concurrent transactions</li>
+              <li>Verify ability to interface with at least 3 financial institutions</li>
+            </ol>
+          <li>Completion Criteria: Validate server side financial transaction  processing between orchestrator and financial institution APIs</li>
+        </ol>
+      </ol>
+      <li>Reservation Processing</li>
+      <ol>
+        <li>Test Objective: NFR-2 Invoke server side HTTP requests between hotel APIs</li>
+        <ol>
+          <li>Technique</li>
+          <ol>
+            <li>Make a series of HTTP requests to hotel APIs</li>
+            <li>Validate and confirm HTTP requests perform as designed</li>
+            <li>Verify ability to interface with at least 3 hotel platforms</li>
+          </ol>
+          <li>Completion Criteria: Validate server side hotel reservation processing between orchestrator and hotel APIs</li>
+        </ol>
+      </ol>
+    </ol>
+  </ol>
+  </div>
+
+  
         <!-- <hr>
         <div class="w3-center">
           <h2>Tables</h2>
@@ -137,7 +421,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <!-- <div class="w3-center"><p><b>Table B-1.</b> Functional requirements for the Chef It! application.
     </p></div> -->
       <!-- conclusion.html-->
-      <h2 class="w3-text-teal">Conclusion</h2>
       </div>
   </div>
 
