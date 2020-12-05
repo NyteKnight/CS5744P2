@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>CHEF-IT! CS5744-P1</title>
+<title>CS5744-P2</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -64,7 +64,7 @@ ol li:before {
   <div class="w3-row w3-padding-64">
     
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Test Plan for Get-A-room Online Hotel Booking System</h1>
+      <h1 class="w3-text-teal">Test Plan for Get A Room Online Hotel Booking System</h1>
       <!-- background.html -->
       <!-- <img src="images/diff_mediums.png" style="display: block;
       text-align: center;
@@ -73,15 +73,15 @@ ol li:before {
       <!-- requirements.html -->
       
       <div class="w3-container">
-      <p>In this document, we will outline our high level test plan for the get-a-room Online Hotel Booking System. This system is designed to allow users to locate available hotel rooms in a desired area and manage the entirety of the booking process. Our test plan will seek to ensure the functionality of this system from an integration and validation perspective.
+      <p>In this document, we will outline our high level test plan for the Get A Room Online Hotel Booking System. This system is designed to allow users to locate available hotel rooms in a desired area and manage the entirety of the booking process. Our test plan will seek to ensure the functionality of this system from an integration and validation perspective.
       </p>
       <h1 class="w3-text-teal">Part 1: Test Scope</h1>
-      <p>To properly test this plan, we will need to approach the system from the requirements described by the team for their final product. The requirements are shown below in Table 1 below, which was provided by the get-a-room team.</p>
+      <p>To properly test this plan, we will need to approach the system from the requirements described by the team for their final product. The requirements are shown below in Table 1 below, which was provided by the Get A Room team.</p>
       <h3 class= "w3-text-teal">Functional Requirement</h3>
       <table class="w3-table w3-striped w3-bordered">
         <thead>
         <tr class="w3-theme">
-          <th>####</th>
+          <th>#######</th>
           <th>Description</th>
         </tr>
         </thead>
@@ -138,7 +138,7 @@ ol li:before {
           <td>FR-13</td>
           <td>Machine learning engine utilizes the following inputs based on the user’s previous hotel choices: distance from location entered, price range, star rating of hotel, guest rating of hotel. Engine will generate ranked results based on the user’s preferences.</td>
         </tr>
-        <tr>
+        <tr class="w3-white">
           <td>FR-14</td>
           <td>Search results can be manually filtered or sorted by the user based on: distance from location entered, price high-to-low, price low-to-high, star rating of hotel, guest rating of hotel.</td>
         </tr>
@@ -148,14 +148,14 @@ ol li:before {
         <table class="w3-table w3-striped w3-bordered">
           <thead>
           <tr class="w3-theme">
-            <th>####</th>
+            <th>#######</th>
             <th>Description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
             <td>NFR-1</td>
-            <td>Get-a-room will support a website and mobile apps for Android and iOS devices.</td>
+            <td>Get A Room will support a website and mobile apps for Android and iOS devices.</td>
           </tr>
           <tr class="w3-white">
             <td>NFR-2</td>
@@ -184,7 +184,7 @@ ol li:before {
           </tbody>
           </table>
         </div>
-        <div class="w3-center"><p><b>Table 1.</b> System requirements described by the get-a-room team.</p></div>
+        <div class="w3-center"><p><b>Table 1.</b> System requirements described by the Get A Room team.</p></div>
       <p>
         The objective of our testing will be to evaluate the design’s functional, performance, and internal design characteristics. The requirement identifiers labeled in Table 1 will help to describe the testing plan as it encompasses each characteristic of the system. This process is further described in the section that follows. 
       </p>
@@ -193,7 +193,7 @@ ol li:before {
   <p>Our test plan will need to evaluate whether or not the system is able to complete all tasks laid out in Table 1. Functionally, it will also need to be assessed to ensure all modules are able to integrate with one another. It will also need to be tested for correctness through validation testing. Due to the relative simplicity of the application, our test process will cover all of the Functional Requirements stated by the development team. The intricate details of the machine learning algorithm that produces suggestions based upon user interaction will be outside of the test scope. However, our test plan will cover the validity of the products of this algorithm.</p>
   <h2 class="w3-text-teal">Internal Design Characteristics</h2>
   <h3 class="w3-text-teal">Requirements tested: NFR-1 - NFR-4</h3>
-  <p>Non-Functional requirements 1-4 cover the internal design of the application. We intend to test these by giving a pass or fail rating based on the ability of the design to accomplish these tasks. NFR-1 and NFR-4 will be satisfied if the design does fulfill these requirements. We will consider NFR-2 and NFR-3 complete if the application can interface with 3 hotel and banking institutions respectively</p>
+  <p>Non-Functional requirements 1-4 cover the internal design of the application. We intend to test these by giving a pass or fail rating based on the ability of the design to accomplish these tasks. NFR-1 and NFR-4 will be satisfied if the design does fulfill these requirements. We will consider NFR-2 and NFR-3 complete if the application can interface with 3 hotel and banking institutions respectively.</p>
   <h2 class="w3-text-teal">Performance Characteristics</h2>
   <h3 class="w3-text-teal">Requirements tested: NFR-5 - NFR-7</h3>
   <p>The performance requirements specified by the developers cover the scalability, integrity, and availability of the application. Our test scope will cover the investigation of how these requirements are satisfied. Since a database storage solution is used on the server side, NFR-5 will be satisfied simply based on the solution chosen. NFR-6 will be assessed as a part of validation testing, and NFR-7 will be tested by simulating a heavy transaction load and monitoring the system’s response.</p>
@@ -357,7 +357,7 @@ ol li:before {
   <h3 class="w3-text-teal">Interface Testing</h3>
   <p>An interface is a connection that integrates two components within a system. An interface can range from a Graphical User Interface (GUI) to APIs and server based communication between the database server to application server or client to web server. Interface Testing is defined as a software testing type which verifies whether the communication between two different software systems is done correctly.</p>  
   <h3 class="w3-text-teal">Services Testing</h3>
-  <p>Web Services Testing is a type of software testing that validates the mechanism of communication through which two applications / devices exchange data. The purpose of Web Services Testing is to check the functionality, reliability, performance, and security of an API(Application Program Interface). Testing the services of the application will occur both online and offline and should be irrespective of underlying architecture.</p> 
+  <p>Web Services Testing is a type of software testing that validates the mechanism of communication through which two applications/devices exchange data. The purpose of Web Services Testing is to check the functionality, reliability, performance, and security of an API (Application Program Interface). Testing the services of the application will occur both online and offline and should be irrespective of underlying architecture.</p> 
   <h3 class="w3-text-teal">Performance Testing</h3>
   <p>Performance testing is a testing practice performed to determine how a system performs in terms of responsiveness and stability under a particular workload. In the context of a web application, we will be testing and analyzing the metrics below:</p>
   <ul>
@@ -370,7 +370,7 @@ ol li:before {
     <li>Query response time</li>
   </ul>
   <h3 class="w3-text-teal">Security Testing</h3>
-  <p>Due to the sensitive data such as personal information and credit card transactions, a thorough security test will be conducted, Security testing is the process intended to reveal flaws in the security mechanisms of an information system that protect data and maintain functionality as intended. The purpose of adding security testing into the validation process uncovers vulnerabilities of the system and determines that the data and resources of the system are protected from possible intruders. It ensures that the software system and application are free from any threats or risks that can cause a loss.</p> 
+  <p>Due to the sensitive data such as personal information and credit card transactions, a thorough security test will be conducted. Security testing is the process intended to reveal flaws in the security mechanisms of an information system that protect data and maintain functionality as intended. The purpose of adding security testing into the validation process uncovers vulnerabilities of the system and determines that the data and resources of the system are protected from possible intruders. It ensures that the software system and application are free from any threats or risks that can cause a loss.</p> 
   <table class="w3-table w3-striped w3-bordered">
     <thead>
     <tr class="w3-theme">
@@ -381,30 +381,31 @@ ol li:before {
     <tbody>
     <tr>
       <td>Usability</td>
-      <td>FR-1,FR-2,FR-3,FR-4,FR-5,FR-6,FR-7,FR-8,FR-9,FR-10</td>
+      <td>FR-1, FR-2, FR-3, FR-4, FR-5, FR-6, FR-7, FR-8, FR-9, FR-10</td>
     </tr>
     <tr class="w3-white">
       <td>Compatibility</td>
-      <td>NFR-1,NFR-4,NFR-5</td>
+      <td>NFR-1, NFR-4, NFR-5</td>
     </tr>
     <tr>
       <td>Interface</td>
-      <td>FR-,FR-3,FR-4,FR-7,FR-8,FR-10,FR-11,FR-12,FR-14</td>
+      <td>FR-1, FR-3, FR-4, FR-7, FR-8, FR-10, FR-11, FR-12, FR-14</td>
     </tr>
     <tr class="w3-white">
       <td>Services</td>
-      <td>FR-1,FR-2,FR-4,FR-5,FR-12,NFR-3,NFR-2</td>
+      <td>FR-1, FR-2, FR-4, FR-5, FR-12, NFR-3, NFR-2</td>
     </tr>
     <tr>
       <td>Performance</td>
-      <td>FR-13,NFR-1,NFR-2,NFR-5,NFR-4,NFR-7</td>
+      <td>FR-13, NFR-1, NFR-2, NFR-5, NFR-4, NFR-7</td>
     </tr>
     <tr class="w3-white">
       <td>Security</td>
-      <td>FR-1,FR-2,FR-12,NFR-4,NFR-6</td>
+      <td>FR-1, FR-2, FR-12, NFR-4, NFR-6</td>
     </tr>
     </tbody>
   </table>
+  <div class="w3-center"><p><b>Table 2.</b> Traceability Matrix mapping requirements to validation tests.</p></div>
   </div>
   </div>
 
